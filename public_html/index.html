@@ -1,0 +1,58 @@
+<html> <head>
+<title>PAC Tracker</title>
+<link rel="stylesheet" type="text/css" href="css/pmstyle.css">
+<link rel="stylesheet" href="css/donor.css">
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script src="js/committees.json"></script>
+<script src="js/transfers.json"></script>
+<script src="js/candidates.json"></script>
+<script src="http://politicalmodeling.com/mapper/js/map_districts.js"></script>
+<script src="js/donor.js"></script>
+
+</head>
+
+<body onload=init()>
+
+<h1><a href=http://politicalmodeling.com/>PoliticalModeling.com</a>: PAC Tracker</h1>
+    <table border=0 width=600><tr><td>
+        <button class="collapsible"><b>Short Instructions</b></button>
+<div class="content">
+    This is a simple widget to let you explore the <a href=https://www.fec.gov/data/receipts>FEC filings</a> of any committee, and see who they contributed to, and who their recipients contributed to and so on.  At present, it's limited to the 2017-2018 campaign season.  Simply start typing a PAC in the search form, and autocomplete.  Then pull up the highlights on the link if you'd like more information or to switch to a view focusing on a different PAC.<p>
+
+If you'd like to increase the number of linkages, simply use a ?ngens=4 (for example), in the URL.  If you'd like the change the number of individual PACs to be broken out separately, use ?ntop=10 (the default is 6).
+<p>
+    
+    If you have thoughts or questions feel free to contact me directly at <i><a href=mailto:drdavegoldberg@gmail.com>drdavegoldberg@gmail.com</a></i>.  <p>
+      </div>
+    </table>
+    <script src="http://politicalmodeling.com/js/collapsible.js"></script>
+
+<center>
+<div class="topnav">
+  <div class="search-container">
+      <input type="text" size=60 id="tags" placeholder="Search..."
+    onkeydown = "if ((event.keyCode == 13)||(event.keyCode == 9)) setTimeout(dosearch,10)">
+      <button type="submit" onclick="dosearch()"><i class="fa fa-search"></i></button><p>
+  </div>
+</div>
+
+
+<p>
+
+<div id=chart_title></div>
+
+<div id=chart_div style="width: 1000px; height: 400px;"></div>
+
+</center>
+
+<center>
+<div id="map_div" style="width:800px;height:600px;"></div><p>
+</center>
+
+
+</body> </html>
