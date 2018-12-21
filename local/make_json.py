@@ -74,7 +74,8 @@ f.write(array_to_dictjs(comm_name,'i_comm_name'))
 
 f.write('console.log("1 done");\n')
 f.close()
-os.system('echo "put committees.json" | sftp hostgator:public_html/donors/js')
+#os.system('echo "put committees.json" | sftp hostgator:public_html/donors/js')
+os.system("mv committees.json ../public_html/js")
 
 
 ## Transfers
@@ -108,7 +109,8 @@ f.write(array_to_js(tran_amt,'tran_amt'));
 #f.write(array_to_js(tran_memo,'tran_memo'));
 f.write('console.log("2 done");\n')
 f.close()
-os.system('echo "put transfers.json" | sftp hostgator:public_html/donors/js')
+#os.system('echo "put transfers.json" | sftp hostgator:public_html/donors/js')
+os.system("mv transfers.json ../public_html/js")
 
 
 ## Candidates
@@ -166,4 +168,5 @@ f.write(array_to_dictjs(cand_name,'i_cand_name'));
 #f.write(array_array_dict(cand_id,cand_name,'cand_id_name'));
 f.write('console.log("3 done");\n')
 f.close()
-os.system('echo "put candidates.json" | sftp hostgator:public_html/donors/js')
+#os.system('echo "put candidates.json" | sftp hostgator:public_html/donors/js')
+os.system("mv candidates.json ../public_html/js")
